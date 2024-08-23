@@ -39,23 +39,23 @@ internal class Program
 
         builder.Services.AddCors();
 
-        var app = builder.Build();
-
-        app.UseCors(options =>
-        {
-            options.AllowAnyHeader()
-            .AllowAnyMethod()
-            .WithOrigins("http://localhost:5173");
-        });
+        var app = builder.Build();       
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
+            app.UseCors(options =>
+            {
+                options.AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithOrigins("http://localhost:5173");
+            });
+
             app.UseSwagger();
             app.UseSwaggerUI();
         }
 
-        app.UseHttpsRedirection();
+        //app.UseHttpsRedirection();
 
         app.UseAuthentication();
         app.UseAuthorization();
