@@ -109,7 +109,7 @@ namespace api.Controllers
             query += " WHERE AuthorId='" + userId + "'";
             query += " ORDER BY Created DESC LIMIT "+ ArticlePageSize+" OFFSET "+ ((pageNo-1) * ArticlePageSize);
 
-            var articles = await _dataContext
+            var articles = await _dataContext                
                 .ArticleSearchView
                 .FromSqlRaw(query)
                 .ToListAsync();
@@ -254,18 +254,20 @@ namespace api.Controllers
                 if (pageNo < 1)
                     pageNo = 1;
 
+                searchText = "%" + searchText + "%";
+
                 string query = "SELECT ";
                 query += " u.FirstName, u.Surname";
                 query += ",a.Id, a.AuthorId, a.Title, a.ShortDescription, a.Created";
                 query += " FROM Articles a";
                 query += " LEFT JOIN Users u ON u.Id=a.AuthorId";
                 query += " WHERE a.IsPublished=1";
-                query += $" AND (a.ShortDescription LIKE '%{searchText}%' OR a.Content LIKE '%{searchText}%')";
+                query += " AND (a.ShortDescription LIKE {0} OR a.Content LIKE {0})";
                 query += " ORDER BY Created DESC LIMIT " + ArticlePageSize + " OFFSET " + ((pageNo - 1) * ArticlePageSize);
 
                 var articles = await _dataContext
                     .ArticleSearchView
-                    .FromSqlRaw(query)
+                    .FromSqlRaw(query, searchText)
                     .ToListAsync();
 
                 var pagedList = new PagedArticleList(pageNo, totalPages, articles);
