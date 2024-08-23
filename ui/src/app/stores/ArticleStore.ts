@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import ApiClient from "../api/ApiClient";
 import { AddUpdateArticleRequestDto } from "../models/AddUpdateArticleRequestDto";
-import { Article } from "../models/Article";
 import { router } from "../router/router";
 
 export class ArticleStore {   
@@ -19,50 +18,34 @@ export class ArticleStore {
     }
 
     addArticle = async (article: AddUpdateArticleRequestDto) => {
-        const savedArticle = await ApiClient.articleApi.addArticle(article);
-
-        console.log(savedArticle);
-
-        return savedArticle;
+        return await ApiClient.articleApi.addArticle(article);
     }
 
     updateArticle = async (id: string, article: AddUpdateArticleRequestDto) => {
-        const resultMessage = await ApiClient.articleApi.updateArticle(id, article);
-
-        return resultMessage;
+        return await ApiClient.articleApi.updateArticle(id, article);
     }
 
     deleteArticle = async (id: string) => {
-        const resultMessage = await ApiClient.articleApi.deleteArticle(id);
+        await ApiClient.articleApi.deleteArticle(id);
     }
 
     getLatestArticles = async (pageNo: number) => {
-        const pagedArticles = await ApiClient.articleApi.latestArticles(pageNo);
-
-        return pagedArticles;
+        return await ApiClient.articleApi.latestArticles(pageNo);
     }
 
     getMyArticles = async (pageNo: number) => {
-        const pagedArticles = await ApiClient.articleApi.myArticles(pageNo);
-
-        return pagedArticles;
+        return await ApiClient.articleApi.myArticles(pageNo);
     }
 
     getArticle = async (id: string) => {
-        const article = await ApiClient.articleApi.getArticle(id);
-
-        return article;
+        return await ApiClient.articleApi.getArticle(id);
     }
 
     getAuthorArticles = async (id: string, pageNo: number) => {
-        const authorArticles = await ApiClient.articleApi.authorArticles(id, pageNo);
-
-        return authorArticles;
+        return await ApiClient.articleApi.authorArticles(id, pageNo);
     }
 
     searchArticles = async (searchText: string, pageNo: number)=> {
-        const searchResults = await ApiClient.articleApi.searchArticles(searchText, pageNo);
-
-        return searchResults;
+        return await ApiClient.articleApi.searchArticles(searchText, pageNo);
     }
 }

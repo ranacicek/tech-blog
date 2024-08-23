@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { store } from '../../app/stores/store';
 import { observer } from 'mobx-react-lite';
 import ArticleList from './ArticleList';
@@ -71,7 +71,7 @@ function SearchArticles() {
         <Pagination 
             activePage={pagingState.currentPage}
             totalPages={pagingState.totalPages}
-            onPageChange={(e, {activePage}) => changeCurrentPage(Number(activePage))}
+            onPageChange={(_, {activePage}) => changeCurrentPage(Number(activePage))}
         />
      </>
   )

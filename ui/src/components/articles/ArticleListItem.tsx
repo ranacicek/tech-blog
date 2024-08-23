@@ -1,7 +1,4 @@
-import React from 'react'
 import { ArticleSearchItem } from '../../app/models/ArticleSearchItem';
-
-
 
 interface Props {
   article: ArticleSearchItem;

@@ -38,14 +38,14 @@ function TopBar() {
         <Search 
           icon='search' 
           placeholder='Search...' 
-          onSearchChange={(e, data)=> handleSearchTextChange(data.value!)}        
+          onSearchChange={(_, data)=> handleSearchTextChange(data.value!)}        
           open={false}
         />
       </MenuItem>
       <MenuMenu position='right'>
         {accountStore.isLoggedin && 
         <MenuItem>
-          <Image src={'/user.png'} avatar spaced='right'/>
+          <Image src={'/image/user.png'} avatar spaced='right'/>
           <Dropdown>
             <DropdownMenu>
               <DropdownItem text='My Profile' icon='user' as={Link} to="/myprofile"/>

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ArticleList from './ArticleList'
 import { store } from '../../app/stores/store';
-import { Article } from '../../app/models/Article';
-import ArticleListItem from './ArticleListItem';
 import { ArticleSearchItem } from '../../app/models/ArticleSearchItem';
 import { Pagination } from 'semantic-ui-react';
 
@@ -30,8 +28,8 @@ export default function LatestArticles() {
    
   }, [currentPage]);
 
-  const changeCurrentPage = (activePage) => {
-    setCurrentPage(Number(activePage));
+  const changeCurrentPage = (activePage: number) => {
+    setCurrentPage(activePage);
   }
 
   return (
@@ -40,7 +38,7 @@ export default function LatestArticles() {
       <Pagination 
       activePage={currentPage}
       totalPages={totalPages}
-      onPageChange={(e, {activePage}) => changeCurrentPage(activePage)}
+      onPageChange={(_, {activePage}) => changeCurrentPage(Number(activePage))}
       />
     </>
   )

@@ -1,4 +1,3 @@
-import React from 'react'
 import { ArticleSearchItem } from '../../app/models/ArticleSearchItem';
 import ArticleListItem from './ArticleListItem';
 import EditableArticleListItem from './EditableArticleListItem';

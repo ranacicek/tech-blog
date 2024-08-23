@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import { store } from '../../app/stores/store';
-import { Navigate } from 'react-router-dom';
-import { Button, Form, Segment, Message } from 'semantic-ui-react';
+import { Button, Form, Message } from 'semantic-ui-react';
 import { Formik, Field, ErrorMessage, Form as FormikForm } from 'formik';
-import UserDto from '../../app/models/UserDto';
 import { showError, showInfo } from '../utils/Toast';
+import { useEffect, useState } from 'react';
 
 export default function MyProfile() { 
 

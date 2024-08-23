@@ -1,10 +1,8 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import TopBar from './TopBar';
 import { Container } from 'semantic-ui-react';
 import FooterBar from './FooterBar';
-import ArticleList from '../articles/ArticleList';
 
 function App() {
   return (

@@ -4,7 +4,6 @@ import LoginResponseDto from "../models/LoginResponseDto";
 import { store } from "../stores/store";
 import { AddUpdateArticleRequestDto } from "../models/AddUpdateArticleRequestDto";
 import { Article } from "../models/Article";
-import { ArticleSearchItem } from "../models/ArticleSearchItem";
 import { RegisterUserModel } from "../models/RegisterUserModel";
 import RegisterResponseDto from "../models/RegisterResponseDto";
 import UserDto from "../models/UserDto";

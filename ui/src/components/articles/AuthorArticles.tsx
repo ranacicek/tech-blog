@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ArticleSearchItem } from '../../app/models/ArticleSearchItem';
 import { store } from '../../app/stores/store';
 import { useParams } from 'react-router-dom';
@@ -48,7 +48,7 @@ export default function AuthorArticles() {
       <Pagination 
       activePage={currentPage}
       totalPages={totalPages}
-      onPageChange={(e, {activePage}) => changeCurrentPage(Number(activePage))}
+      onPageChange={(_, {activePage}) => changeCurrentPage(Number(activePage))}
       />
     </>
   );

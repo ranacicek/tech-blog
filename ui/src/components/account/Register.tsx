@@ -1,12 +1,10 @@
-import React from 'react';
 import { Button, Form, Segment, Message } from 'semantic-ui-react';
 import { Formik, Field, ErrorMessage, Form as FormikForm } from 'formik';
 import * as Yup from 'yup';
 import { store } from '../../app/stores/store';
-import { router } from '../../app/router/router';
-import { RegisterUserModel } from '../../app/models/RegisterUserModel';
 import {showAlert, showError} from '../utils/Toast';
 import { Link } from 'react-router-dom';
+import { RegisterUserModel } from '../../app/models/RegisterUserModel';
 
 const Register = () => {
   const { accountStore } = store;

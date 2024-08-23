@@ -40,7 +40,7 @@ export default function MyArticles() {
       <Pagination 
       activePage={currentPage}
       totalPages={totalPages}
-      onPageChange={(e, {activePage}) => changeCurrentPage(Number( activePage))}
+      onPageChange={(_, {activePage}) => changeCurrentPage(Number( activePage))}
       />
     </>
   )
