@@ -1,0 +1,100 @@
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: cadetblue;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  display: inline-block;
+  width: 300px;
+}
+
+.ui.secondary.menu {
+  box-shadow: 0 0 1px 1px #666;
+}
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  justify-content: center;
+  align-items: center;  
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cadetblue;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;}
+
+.register-page .custom-input {
+  
+    display: flex;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .register-page .custom-button {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .register-form {
+    display: inline-block;
+    width: 300px;
+  }
+
+  .form-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    background-color: cadetblue;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .general-form {
+    display: inline-block;
+    width: 300px;
+  }
+  .articlelistitem-titles{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 9px;
+    
+  }
+
+  .articlelistitem-short-desc{
+    font-style: italic;
+  }
+
+  .app {
+    padding-bottom: 50px;
+  }
+
+  /*
+  hr {
+    box-shadow: 0 0 1px /px #666;
+  }
+  */
